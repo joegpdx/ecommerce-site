@@ -1,7 +1,7 @@
 const wilsonAudio = {
     id: 'Wilson Audio',
     name: 'Magnum Opus',
-    image: 'grande-evo-black-grande.png',
+    image: '../assets/wilson-audio-magnum-opus.png',
     description: 'Floorstanding Loudspeaker',
     category: 'Speakers',
     price: 850000,
@@ -10,7 +10,7 @@ const wilsonAudio = {
 const focal = {
     id: 'Focal',
     name: 'Focal Grand Utopia EM EVO',
-    image: 'grande-evo-black-grande.png',
+    image: '../assets/grande-evo-black-grande.png',
     description: 'Floorstanding Loudspeaker',
     category: 'Speakers',
     price: 229000,
@@ -18,8 +18,8 @@ const focal = {
 };
 const dynaudio = {
     id: 'Dunaaudio',
-    name: 'Focal Grand Utopia EM EVO',
-    image: 'dynaudio-evidence-master.png',
+    name: 'Evidence Master',
+    image: '../assets/dynaudio-evidence-master.png',
     description: 'Floorstanding Loudspeaker',
     category: 'Speakers',
     price: 169999,
@@ -28,7 +28,7 @@ const dynaudio = {
 const avantgarde = {
     id: 'Avantgarde',
     name: 'Avantgarde Trio Classico',
-    image: 'avantgarde-trio-classico.png',
+    image: '../assets/avantgarde-trio-classico.png',
     description: 'Floorstanding Loudspeaker',
     category: 'Speakers',
     price: 190000,
@@ -37,7 +37,7 @@ const avantgarde = {
 const magico = {
     id: 'Magico',
     name: 'Magico M5',
-    image: 'magico-m5.png',
+    image: '../assets/magico-m5.png',
     description: 'Floorstanding Loudspeaker',
     category: 'Speakers',
     price: 89000,
@@ -46,7 +46,7 @@ const magico = {
 const moonAudio = {
     id: 'Moon Audio',
     name: 'Moon Audio Titan',
-    image: 'moon-audio-titan.png',
+    image: '../assets/moon-audio-titan.png',
     description: 'Floorstanding Loudspeaker',
     category: 'Speakers',
     price: 500000,
@@ -55,7 +55,7 @@ const moonAudio = {
 const kef = {
     id: 'KEF Muon',
     name: 'KEF Muon',
-    image: 'kef-muon.png',
+    image: '../assets/kef-muon.png',
     description: 'Floorstanding Loudspeaker',
     category: 'Speakers',
     price: 500000,
