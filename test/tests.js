@@ -1,1 +1,2 @@
-import './example.test.js';
+import 'render-speakers-tests.js';
+
