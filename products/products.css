@@ -8,21 +8,21 @@
     list-style: none;
     position: relative;
     background: white;
-    border: 1px solid #aaa;
+    border: 2px solid black ;
     border-radius: 25px;
     width: 400px;
     height: 350px;
     margin-right: 5px;
     margin-bottom: 5px;
     text-align: center;
-    box-shadow: 1px 1px 2px #ccc;
-    transition: transform 200ms ease-in-out;
+    /* box-shadow: 1px 1px 2px #ccc; */
+    /* transition: transform 200ms ease-in-out; */
 }
 
-#speakers li:hover {
+/* #speakers li:hover {
     box-shadow: 2px 2px 3px #bbb;
     transform: translate3d(-1px, -1px, 0);
-}
+} */
 
 #speakers li h3 {
     font-size: 1.1rem;

@@ -62,6 +62,7 @@ const kef = {
     Color: 'silver',
 };
 
+
 const speakers = [
     wilsonAudio,
     focal,

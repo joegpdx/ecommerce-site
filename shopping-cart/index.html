@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="../common/main.css">
+    <link rel="stylesheet" href="shopping-cart.css">
+</head>
+
+<body>
+    <header>
+        <h1>Speaker Shopping Cart</h1>
+        <nav>
+            <a href="../">Home</a>
+            <a href="../products">Buy Speakers</a>
+            <a href="./shopping-cart">Shopping Cart</a>
+        </nav>
+    </header>
+
+    <main>
+        <table id='shopping-cart'>
+            <thead>
+                <tr>
+                    <th class="align-left">Name:</th>
+                    <th>Quantity:</th>
+                    <th>Price:</th>
+                    <th>Total:</th>
+                </tr>
+            </thead>
+
+            <tbody></tbody>
+
+            <tfoot>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th>Order Total:</th>
+                    <th id="order-total"></th>
+                </tr>
+            </tfoot>
+        </table>
+        <p class="order-now">
+            <button>Place Order</button>
+        </p>
+    </main>
+
+    <script type="module" src="shopping-cart.js"></script>
+</body>
+
+</html>
