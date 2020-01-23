@@ -19,10 +19,10 @@
     /* transition: transform 200ms ease-in-out; */
 }
 
-#speakers li:hover {
-    /* box-shadow: 2px 2px 3px #bbb; */
-    /* transform: translate3d(-1px, -1px, 0); */
-}
+/* #speakers li:hover {
+    box-shadow: 2px 2px 3px #bbb;
+    transform: translate3d(-1px, -1px, 0);
+} */
 
 #speakers li h3 {
     font-size: 1.1rem;

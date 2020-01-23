@@ -1,17 +1,17 @@
 const cart = [{
-    id: 'wilson Audio',
+    id: 'Wilson Audio',
     quantity: 1,
 }, {
-    id: 'focal',
+    id: 'Focal',
     quantity: 1,
 }, {
-    id: 'dynaudio',
+    id: 'Dunaaudio',
     quantity: 1
 }, {
-    id: 'avantegarde',
+    id: 'Avantgarde',
     quantity: 1
 }, {
-    id: 'magico',
+    id: 'Magico',
     quantity: 1
 }];
 
