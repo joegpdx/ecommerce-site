@@ -58,7 +58,7 @@ const kef = {
     image: '../assets/kef-muon.png',
     description: 'Floorstanding Loudspeaker',
     category: 'Speakers',
-    price: 500000,
+    price: 189000,
     Color: 'silver',
 };
 
