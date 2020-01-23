@@ -4,15 +4,23 @@
 
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background: white
+    background: white;
     margin: 0;
+}
+
+header nav a {
+    color: white;
+    border: 1px solid white;
+    padding: 3px 8px;
+    text-decoration: none;
+    /* transition: color 200ms ease-in; */
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: black;
+    background: blue;
     color: white;
 }
 
@@ -32,4 +40,12 @@ h1 {
     height: 750px;
     /* width: 1250px; */
     margin-top: 2px;
+    cursor: alias;
+}
+
+p a {
+    color: black;
+    border: 1px solid white;
+    padding: 3px 8px;
+    text-decoration: none;
 }
