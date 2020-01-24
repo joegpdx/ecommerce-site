@@ -1,4 +1,4 @@
-import { findById } from '../common/utils.js';
+import { findById, toUSD } from '../common/utils.js';
 
 function renderSpeakers(speakers) {
     const li = document.createElement('li');
@@ -16,9 +16,11 @@ function renderSpeakers(speakers) {
 
     const p = document.createElement('p');
     p.className = 'price';
+    p.textContent = toUSD(speakers.price);
 
     const usd = '$' + speakers.price.toFixed(2);
     p.textContent = usd;
+    p.textContent = toUSD(speakers.price);
 
     const button = document.createElement('button');
     button.textContent = 'Add';
@@ -28,14 +30,13 @@ function renderSpeakers(speakers) {
         let json = localStorage.getItem('CART');
         let cart;
         if (json) {
-            json = JSON.parse(json);
+            cart = JSON.parse(json);
         }
         else {
             cart = [];
         }
-
+      
         let lineItem = findById(cart, speakers.id);
-
         if (!lineItem) {
             lineItem = {
                 id: speakers.id,
@@ -48,7 +49,8 @@ function renderSpeakers(speakers) {
         }
         json = JSON.stringify(cart);
 
-        alert('1' + speakers.name + 'add to cart');
+        localStorage.setItem('CART', json);
+        // alert('1' + speakers.name + 'add to cart');
 
     });
     p.appendChild(button);

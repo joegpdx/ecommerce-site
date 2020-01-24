@@ -61,8 +61,6 @@ const kef = {
     price: 189000,
     Color: 'silver',
 };
-
-
 const speakers = [
     wilsonAudio,
     focal,
