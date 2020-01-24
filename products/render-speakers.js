@@ -48,7 +48,7 @@ function renderSpeakers(speakers) {
         }
         json = JSON.stringify(cart);
         localStorage.setItem('CART', json);
-        alert('1' + speakers.name + 'add to cart');
+        // alert('1' + speakers.name + 'add to cart');
 
     });
     p.appendChild(button);
