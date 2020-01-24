@@ -35,6 +35,7 @@ function renderSpeakers(speakers) {
         else {
             cart = [];
         }
+      
         let lineItem = findById(cart, speakers.id);
         if (!lineItem) {
             lineItem = {
@@ -47,6 +48,7 @@ function renderSpeakers(speakers) {
             lineItem.quantity++;
         }
         json = JSON.stringify(cart);
+
         localStorage.setItem('CART', json);
         // alert('1' + speakers.name + 'add to cart');
 
