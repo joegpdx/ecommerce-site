@@ -1,4 +1,4 @@
-import cart from '../data/carts.js';
+// import cart from '../data/carts.js';
 import speakers from '../data/speakers.js';
 import {
     findById,
@@ -10,6 +10,9 @@ import renderLineItem from './render-line-items.js';
 
 const tbody = document.querySelector('tbody');
 const orderTotalCell = document.getElementById('order-total');
+const buybutton = document.getElementById('buy-now');
+
+const json
 
 for (let i = 0; i < cart.length; i++) {
     const lineItem = cart[i];
