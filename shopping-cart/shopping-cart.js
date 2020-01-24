@@ -10,10 +10,17 @@ import renderLineItem from './render-line-items.js';
 
 const tbody = document.querySelector('tbody');
 const orderTotalCell = document.getElementById('order-total');
-const buybutton = document.getElementById('buy-now');
+const ordernowbutton = document.getElementById('order-now');
 
-const json
+const json = localStorage.getItem('CART');
 
+let cart;
+if (json) {
+    cart = JSON.parse(json);
+}
+else {
+    cart = [];
+}
 for (let i = 0; i < cart.length; i++) {
     const lineItem = cart[i];
     const speaker = findById(speakers, lineItem.id);
