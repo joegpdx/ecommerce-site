@@ -20,12 +20,16 @@ function renderSpeakers(speakers) {
     li.appendChild(h3);
 
     const img = document.createElement('img');
-    img.src = '../assets/' + speakers.image;
+    img.src = speakers.image;
     img.alt = speakers.name + ' image';
     li.appendChild(img);
 
     const p = document.createElement('p');
     p.className = 'price';
+    p.textContent = toUSD(speakers.price);
+
+    const usd = '$' + speakers.price.toFixed(2);
+    p.textContent = usd;
     p.textContent = toUSD(speakers.price);
 
     const button = document.createElement('button');
@@ -35,20 +39,20 @@ function renderSpeakers(speakers) {
 
         const cart = makeCart();
 
-        let thatIsInCart = findById(cart, speakers.id);
-        if (!thatIsInCart) {
+        let thatIsAlreadyInCart = findById(cart, speakers.id);
+        if (!thatIsAlreadyInCart) {
             const initialItem = {
                 id: speakers.id,
                 quantity: 1
             };
-
             cart.push(initialItem);
-        } else {
-            thatIsInCart.quantity++;
         }
+        else {
+            thatIsAlreadyInCart.quantity++;
+        }
+
         const newCartState = JSON.stringify(cart);
         localStorage.setItem('CART', newCartState);
-
     });
     p.appendChild(button);
 

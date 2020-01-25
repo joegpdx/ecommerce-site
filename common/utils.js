@@ -1,3 +1,5 @@
+import speakers from '../data/speakers.js';
+
 export function findById(items, id) {
     for (let i = 0; i < items.length; i++) {
         const item = items[i];
@@ -37,3 +39,21 @@ export function calcOrderTotal(cart, speakers) {
 
     return roundCurrency(orderTotal);
 }
+
+const seedProducts = () => {
+    const alreadyProducts = localStorage.getItem(seedProducts);
+
+    if (!alreadyProducts) {
+        const stringSpeakers = JSON.stringify(speakers);
+        localStorage.setItem(seedProducts, stringSpeakers);
+    }
+};
+
+export const getProducts = () => {
+    seedProducts();
+
+    const products = localStorage.getItem(seedProducts);
+    const parsedPorducts = JSON.parse(products);
+
+    return parsedPorducts;
+};

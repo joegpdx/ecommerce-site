@@ -1,17 +1,19 @@
-import speakers from '../data/speakers.js';
+// import speakers from '../data/speakers.js';
 import {
     findById,
     calcOrderTotal,
-    toUSD
+    toUSD,
+    getProducts
 } from '../common/utils.js';
 import renderLineItem from './render-line-items.js';
+
+const speakers = getProducts();
 
 const tbody = document.querySelector('tbody');
 const orderTotalCell = document.getElementById('order-total');
 const ordernowbutton = document.getElementById('order-now');
 
 const json = localStorage.getItem('CART');
-
 let cart;
 if (json) {
     cart = JSON.parse(json);
