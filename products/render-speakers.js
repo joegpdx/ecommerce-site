@@ -1,4 +1,14 @@
-import { findById, toUSD } from '../common/utils.js';
+import { findById, toUSD, } from '../common/utils.js';
+
+const makeCart = () => {
+    const somePossibleCart = localStorage.getItem('CART');
+
+    if (somePossibleCart) {
+        return JSON.parse(somePossibleCart);
+    } else {
+        return [];
+    }
+};
 
 function renderSpeakers(speakers) {
     const li = document.createElement('li');
@@ -10,7 +20,7 @@ function renderSpeakers(speakers) {
     li.appendChild(h3);
 
     const img = document.createElement('img');
-    img.src = speakers.image;
+    img.src = '' + speakers.image;
     img.alt = speakers.name + ' image';
     li.appendChild(img);
 
@@ -18,40 +28,27 @@ function renderSpeakers(speakers) {
     p.className = 'price';
     p.textContent = toUSD(speakers.price);
 
-    const usd = '$' + speakers.price.toFixed(2);
-    p.textContent = usd;
-    p.textContent = toUSD(speakers.price);
-
     const button = document.createElement('button');
     button.textContent = 'Add';
     button.value = speakers.id;
     button.addEventListener('click', () => {
 
-        let json = localStorage.getItem('CART');
-        let cart;
-        if (json) {
-            cart = JSON.parse(json);
-        }
-        else {
-            cart = [];
-        }
+        const cart = makeCart();
 
-        let lineItem = findById(cart, speakers.id);
-        if (!lineItem) {
-            lineItem = {
+        let thatIsAlreadyInCart = findById(cart, speakers.id);
+        if (!thatIsAlreadyInCart) {
+            const initialItem = {
                 id: speakers.id,
                 quantity: 1
             };
-            cart.push(lineItem);
+            cart.push(initialItem);
         }
         else {
-            lineItem.quantity++;
+            thatIsAlreadyInCart.quantity++;
         }
-        json = JSON.stringify(cart);
 
-        localStorage.setItem('CART', json);
-        // alert('1' + speakers.name + 'add to cart');
-
+        const newCartState = JSON.stringify(cart);
+        localStorage.setItem('CART', newCartState);
     });
     p.appendChild(button);
 
