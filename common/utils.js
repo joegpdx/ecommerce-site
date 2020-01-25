@@ -10,11 +10,9 @@ export function findById(items, id) {
     }
     return null;
 }
-
 export function toUSD(number) {
     return number.toLocaleString('en-US', {
-        style: 'currency',
-        currency: 'USD'
+        style: 'currency', currency: 'USD'
     });
 }
 

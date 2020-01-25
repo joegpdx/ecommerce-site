@@ -1,5 +1,5 @@
 import renderSpeakers from './render-speakers.js';
-import { getProducts } from '../common/utils.js';
+import { getProducts, toUSD } from '../common/utils.js';
 
 const speakers = getProducts();
 const list = document.getElementById('speakers');
@@ -15,7 +15,7 @@ button.addEventListener('click', (eventrefresh) => {
     const newSpeaker = {
         name: data.get('name'),
         id: data.get('id'),
-        price: '$' + numberizedPrice.toFixed(2),
+        price: toUSD(numberizedPrice),
         image: data.get('image')
     };
     speakers.push(newSpeaker);

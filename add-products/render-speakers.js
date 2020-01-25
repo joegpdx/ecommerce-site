@@ -1,4 +1,4 @@
-import { findById, toUSD } from '../common/utils.js';
+import { findById, toUSD, } from '../common/utils.js';
 
 const makeCart = () => {
     const somePossibleCart = localStorage.getItem('CART');
