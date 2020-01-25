@@ -22,11 +22,8 @@ button.addEventListener('click', (eventrefresh) => {
 
     const stringySpeaker = JSON.stringify(speakers);
     localStorage.setItem('speaker', stringySpeaker);
-    // build the new list item element
     const element = renderSpeakers(newSpeaker);
-    // remove the button
     element.querySelector('button').remove();
-    // add the element to the list
     list.appendChild(element);
 
 });

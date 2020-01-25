@@ -1,15 +1,5 @@
 import { findById, toUSD } from '../common/utils.js';
 
-const makeCart = () => {
-    const somePossibleCart = localStorage.getItem('CART');
-
-    if (somePossibleCart) {
-        return JSON.parse(somePossibleCart);
-    } else {
-        return [];
-    }
-};
-
 function renderSpeakers(speakers) {
     const li = document.createElement('li');
     li.className = speakers.category;
@@ -20,7 +10,7 @@ function renderSpeakers(speakers) {
     li.appendChild(h3);
 
     const img = document.createElement('img');
-    img.src = '../assets/' + speakers.image;
+    img.src = speakers.image;
     img.alt = speakers.name + ' image';
     li.appendChild(img);
 
@@ -28,26 +18,39 @@ function renderSpeakers(speakers) {
     p.className = 'price';
     p.textContent = toUSD(speakers.price);
 
+    const usd = '$' + speakers.price.toFixed(2);
+    p.textContent = usd;
+    p.textContent = toUSD(speakers.price);
+
     const button = document.createElement('button');
     button.textContent = 'Add';
     button.value = speakers.id;
     button.addEventListener('click', () => {
 
-        const cart = makeCart();
+        let json = localStorage.getItem('CART');
+        let cart;
+        if (json) {
+            cart = JSON.parse(json);
+        }
+        else {
+            cart = [];
+        }
 
-        let thatIsInCart = findById(cart, speakers.id);
-        if (!thatIsInCart) {
-            const initialItem = {
+        let lineItem = findById(cart, speakers.id);
+        if (!lineItem) {
+            lineItem = {
                 id: speakers.id,
                 quantity: 1
             };
-
-            cart.push(initialItem);
-        } else {
-            thatIsInCart.quantity++;
+            cart.push(lineItem);
         }
-        const newCartState = JSON.stringify(cart);
-        localStorage.setItem('CART', newCartState);
+        else {
+            lineItem.quantity++;
+        }
+        json = JSON.stringify(cart);
+
+        localStorage.setItem('CART', json);
+        // alert('1' + speakers.name + 'add to cart');
 
     });
     p.appendChild(button);

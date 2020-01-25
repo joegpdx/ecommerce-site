@@ -20,16 +20,12 @@ function renderSpeakers(speakers) {
     li.appendChild(h3);
 
     const img = document.createElement('img');
-    img.src = speakers.image;
+    img.src = '' + speakers.image;
     img.alt = speakers.name + ' image';
     li.appendChild(img);
 
     const p = document.createElement('p');
     p.className = 'price';
-    p.textContent = toUSD(speakers.price);
-
-    const usd = '$' + speakers.price.toFixed(2);
-    p.textContent = usd;
     p.textContent = toUSD(speakers.price);
 
     const button = document.createElement('button');
