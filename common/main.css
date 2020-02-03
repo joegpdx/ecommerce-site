@@ -43,9 +43,9 @@ h1 {
     cursor: alias;
 }
 
-p a {
+a {
     color: black;
-    border: 1px solid blue;
-    padding: 3px 8px;
-    text-decoration: none;
+    border: 5px solid blue;
+    padding: 4px 8px;
+    text-decoration: navy;
 }
