@@ -19,6 +19,7 @@ button.addEventListener('click', (eventrefresh) => {
         image: data.get('image')
     };
     speakers.push(newSpeaker);
+    console.log(speakers);
 
     const stringySpeaker = JSON.stringify(speakers);
     localStorage.setItem('speaker', stringySpeaker);
@@ -28,12 +29,29 @@ button.addEventListener('click', (eventrefresh) => {
 
 });
 
-for (let i = 0; i < speakers.length; i++) {
-    const speaker = speakers[i];
+
+const newSpeakers = makeSpeakers();
+
+
+function makeSpeakers() {
+    const somePossibleCart = localStorage.getItem('speaker');
+
+    if (somePossibleCart) {
+        return JSON.parse(somePossibleCart);
+    } else {
+        return [];
+    }
+};
+
+console.log(newSpeakers);
+
+for (let i = 0; i < newSpeakers.length; i++) {
+    const speaker = newSpeakers[i];
     const element = renderSpeakers(speaker);
     element.querySelector('button').remove();
 
     list.appendChild(element);
 }
+
 
 
